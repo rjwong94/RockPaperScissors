@@ -1,20 +1,25 @@
 let a = "rock";
 let b = "paper";
 let c = "scissors";
+let playerSelection = "rock";
+let computerSelection;
 
-function getComputerChoice() {
-    i = Math.floor(Math.random() * 3) + 1;
+function getComputerChoice(i = Math.floor(Math.random() * 3) + 1) {
     if (i == 1) {
-        return a;
+        computerSelection = a;
     }
 
     if (i == 2) {
-        return b;
+        computerSelection = b;
     }
 
-    else {
-        return c;
+    if (i == 3) {
+        computerSelection = c;
     }
+
+    return computerSelection;
 }
+
+
 
 console.log(getComputerChoice())
