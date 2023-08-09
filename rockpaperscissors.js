@@ -1,7 +1,8 @@
 let a = "rock";
 let b = "paper";
 let c = "scissors";
-let playerSelection = "paper";
+
+
 
 function getComputerChoice(i = Math.floor(Math.random() * 3) + 1) {
     if (i == 1) {
@@ -17,60 +18,43 @@ function getComputerChoice(i = Math.floor(Math.random() * 3) + 1) {
     }
 }
 
-let win = 0;
-let loss = 0;
-let tie = 0;
-
-let computerSelection = getComputerChoice();
-
 function playRound(playerSelection,computerSelection) {
     if (playerSelection == computerSelection) {
-        tie++;
-        return playerSelection + " ties with " + computerSelection;
+        return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have tied!"    
     }
-    
+
     else if (playerSelection == a) {
         if (computerSelection == b) {
-            loss++;
-            return "You lose! Paper beats rock."
+            return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have lost!"
         }
+
         else if (computerSelection == c) {
-            win++;
-            return "You win! Rock beats scissors."
+            return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have won!"
         }
     }
 
     else if (playerSelection == b) {
         if (computerSelection == a) {
-            win++;
-            return "You win! Paper beats rock."
+            return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have won!"
         }
         else if (computerSelection == c) {
-            loss++;
-            return "You lose! Scissors beats paper."
+            return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have lost!"
         }
-    } 
+    }
 
     else if (playerSelection == c) {
         if (computerSelection == a) {
-            loss++;
-            return "You lose! Rock beats scissors."
+            return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have lost!"
         }
         else if (computerSelection == b) {
-            win++;
-            return "You win! Scissors beats paper."
+            return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have won!"
         }
     }
+
+    else return "Error!!!";
 }
 
-function game() {
-    let i = 0;
-    while (i < 5) {
-        playRound(playerSelection, computerSelection);
-        i++;
-    }
+let playerSelection = prompt("Choose rock, paper, or scissors: ").toLowerCase();
+let computerSelection = getComputerChoice();
 
-    return "Wins: " + win + " Losses: " + loss + " Ties: " + tie
-}
-
-console.log(game())
+console.log(playRound(playerSelection,computerSelection));
