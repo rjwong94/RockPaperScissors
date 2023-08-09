@@ -20,33 +20,40 @@ function getComputerChoice(i = Math.floor(Math.random() * 3) + 1) {
 
 function playRound(playerSelection,computerSelection) {
     if (playerSelection == computerSelection) {
+        ties++;
         return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have tied!"    
     }
 
     else if (playerSelection == a) {
         if (computerSelection == b) {
+            loss++;
             return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have lost!"
         }
 
         else if (computerSelection == c) {
+            wins++;
             return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have won!"
         }
     }
 
     else if (playerSelection == b) {
         if (computerSelection == a) {
+            wins++;
             return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have won!"
         }
         else if (computerSelection == c) {
+            loss++;
             return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have lost!"
         }
     }
 
     else if (playerSelection == c) {
         if (computerSelection == a) {
+            loss++;
             return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have lost!"
         }
         else if (computerSelection == b) {
+            wins++;
             return "You selected: " + playerSelection + "\nOppenent selected: " + computerSelection + "\nYou have won!"
         }
     }
@@ -54,7 +61,28 @@ function playRound(playerSelection,computerSelection) {
     else return "Error!!!";
 }
 
-let playerSelection = prompt("Choose rock, paper, or scissors: ").toLowerCase();
-let computerSelection = getComputerChoice();
+let n = 0;
+let wins = 0;
+let loss = 0;
+let ties = 0;
 
-console.log(playRound(playerSelection,computerSelection));
+while (n < 5) {
+    let playerSelection = prompt("Choose rock, paper, or scissors: ").toLowerCase();
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection,computerSelection));
+    n++;
+}
+
+function results() {
+    if (wins > loss) {
+        return "You won " + wins + " time(s), lost " + loss + " time(s), and tied " + ties + " time(s). You win!!!"
+    }
+    else if (loss > wins) {
+        return "You won " + wins + " time(s), lost " + loss + " time(s), and tied " + ties + " time(s). You lose!!!"
+    }
+    else {
+        return wins + " " + ties + " " + loss
+    }
+}
+
+console.log(results());
