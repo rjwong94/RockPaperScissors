@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="rockpaperscissorsv2.css">
+  <title>Page Title</title>
+</head>
+<body>
+
+  <div class="navigation-bar">
+    <p class="home">Home</p>
+    <p class="about">About</p>
+    <p class="contact">Contact Us</p>
+  </div>
+
+  <div class="game-selections">
+    <div class="rock">
+        <p>Rock</p>
+        <button id="rockButton"><img src="rock-200x187.png" alt="Rock"></button>
+    </div>
+      
+    <div class="paper">
+      <p>Paper</p>
+      <button id="paperButton"><img src="paper-200x187.png" alt="Paper"></button>
+    </div>
+      
+    <div class="scissors">
+      <p>Scissors</p>
+      <button id="scissorButton"><img src="scissors-200x187.png" alt="Scissors"></button>
+    </div>
+
+    <!--<div class="button1">
+      <p>Color</p>
+      <button id="colorChangeId" onclick="buttonChange()">Color</button>
+    </div> -->
+
+  </div>
+
+  <div class="outcome">
+    <p id="outcomeText"></p>
+  </div>
+
+  <div class="scoreboard">
+    <h1>Scoreboard</h1>
+    <div class="score">
+      <h2>Wins</h2>
+      <p id="player">0</p>
+      <h2>Losses</h2>
+      <p id="computer">0</p>
+      <h2>Ties</h2>
+      <p id="ties">0</p>
+    </div>
+  </div>
+
+  <button id="resetButton">RESET</button>
+  
+</body>
+
+<script src="mainv2.js">
+  // Your JavaScript goes here!
+  
+</script>
+
+</html>
