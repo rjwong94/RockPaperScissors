@@ -106,6 +106,7 @@ function resetFunc(){
   player.innerHTML = wins;
   computer.innerHTML = losses;
   tie.innerHTML = ties;
+  outcome.innerHTML = "Select your choice..";
 }
 
 function buttonChange() {
